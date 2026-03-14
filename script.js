@@ -11,7 +11,7 @@
   var BANNER_INTERVAL = 4500;
 
   // --- 10. Current year ---
-  var yearEl = document.getElementById("year");
+  var yearEl = document.getElementById("footer-year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // --- 1. Banner: rotate slides 4.5s, dots, close with slideUp then remove ---
