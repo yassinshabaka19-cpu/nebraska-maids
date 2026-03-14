@@ -140,6 +140,13 @@
     });
   }
 
+  // Quote widget add-on cards: toggle selected state
+  document.querySelectorAll(".quote-addon-card").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("addon-selected");
+    });
+  });
+
   // --- 5. Checklist tabs ---
   var checklistTabs = document.querySelectorAll(".checklist-tab");
   var checklistPanels = document.querySelectorAll(".checklist-panel");

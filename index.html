@@ -114,7 +114,23 @@
                 <div><label for="quote-size">Home Size</label><select id="quote-size" class="quote-select"><option value="">Select</option><option value="under500">Under 500 sqft</option><option value="500-1000">500–1,000 sqft</option><option value="1000-1500">1,000–1,500 sqft</option><option value="1500-2000">1,500–2,000 sqft</option><option value="2000-2500">2,000–2,500 sqft</option><option value="2500-3000">2,500–3,000 sqft</option><option value="3000+">3,000+ sqft</option></select></div>
                 <div><label for="quote-type">Cleaning Type</label><select id="quote-type" class="quote-select"><option value="">Select</option><option value="standard">Standard Clean</option><option value="deep">Deep Clean</option><option value="move-out">Move Out Clean</option><option value="airbnb">Airbnb Turnover</option><option value="event">Event Cleaning</option></select></div>
               </div>
-              <label for="quote-details">Any special details or add-ons? (optional)</label>
+              <p class="quote-addons-heading">Add-ons (optional)</p>
+              <div class="quote-addons-grid" role="group" aria-label="Select add-on services">
+                <button type="button" class="addon-card quote-addon-card" data-addon="fridge"><img src="assets/icons/addon-fridge.png" alt=""><span class="addon-label">Inside Fridge</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="oven"><img src="assets/icons/addon-oven.png" alt=""><span class="addon-label">Inside Oven</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="cabinets"><img src="assets/icons/addon-cabinets.png" alt=""><span class="addon-label">Inside Cabinets</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="windows"><img src="assets/icons/addon-windows.png" alt=""><span class="addon-label">Interior Windows</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="laundry"><img src="assets/icons/addon-laundry.png" alt=""><span class="addon-label">Laundry & Folding</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="organization"><img src="assets/icons/addon-organization.png" alt=""><span class="addon-label">Organization</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="blinds"><img src="assets/icons/addon-blinds.png" alt=""><span class="addon-label">Window Blinds</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="office"><img src="assets/icons/addon-office.png" alt=""><span class="addon-label">Office Cleaning</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="washer"><img src="assets/icons/addon-washer.png" alt=""><span class="addon-label">Washer & Dryer</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="stairs"><img src="assets/icons/addon-stairs.png" alt=""><span class="addon-label">Stairway Detail</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="hardwood"><img src="assets/icons/addon-hardwood.png" alt=""><span class="addon-label">Hardwood Care</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="tile"><img src="assets/icons/addon-tile.png" alt=""><span class="addon-label">Tile & Grout</span></button>
+                <button type="button" class="addon-card quote-addon-card" data-addon="baseboards"><img src="assets/icons/addon-baseboards.png" alt=""><span class="addon-label">Baseboard Detail</span></button>
+              </div>
+              <label for="quote-details">Any special details? (optional)</label>
               <textarea id="quote-details" class="quote-textarea" rows="2" placeholder="Any special details or add-ons? (optional)"></textarea>
               <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Get My Free Estimate →</button>
             </div>
@@ -298,21 +314,19 @@
           <h3 class="addons-title">Optional Add-On Services</h3>
           <p class="addons-subtext">Not included in standard scope — available upon request for an additional fee.</p>
           <ul class="addons-grid">
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=300&h=180&fit=crop&auto=format" alt=""><strong>Inside Fridge</strong><span>Deep clean fridge interior</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=180&fit=crop&auto=format" alt=""><strong>Inside Oven</strong><span>Full oven degreasing</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1556909045-f986b2b44e4b?w=300&h=180&fit=crop&auto=format" alt=""><strong>Inside Cabinets</strong><span>Wipe all cabinet interiors</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1527515637462-cff94aca85c7?w=300&h=180&fit=crop&auto=format" alt=""><strong>Interior Windows</strong><span>Clean all window glass</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=180&fit=crop&auto=format" alt=""><strong>Laundry & Folding</strong><span>Wash and fold laundry</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=180&fit=crop&auto=format" alt=""><strong>Organization</strong><span>Organize closets & spaces</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=180&fit=crop&auto=format" alt=""><strong>Window Blinds</strong><span>Deep clean all blinds</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=180&fit=crop&auto=format" alt=""><strong>Office Cleaning</strong><span>Clean home workspace</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=300&h=180&fit=crop&auto=format" alt=""><strong>Washer & Dryer</strong><span>Clean appliance exteriors</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1601628828688-632f38a5a7d0?w=300&h=180&fit=crop&auto=format" alt=""><strong>Stairway Detail</strong><span>Full staircase deep clean</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=300&h=180&fit=crop&auto=format" alt=""><strong>Hardwood Care</strong><span>Wood floor treatment</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=300&h=180&fit=crop&auto=format" alt=""><strong>Tile & Grout</strong><span>Deep tile scrubbing</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300&h=180&fit=crop&auto=format" alt=""><strong>Pet Hair Removal</strong><span>Extra pet hair treatment</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&h=180&fit=crop&auto=format" alt=""><strong>Baseboard Detail</strong><span>Extra baseboard scrubbing</span></li>
-            <li class="addon-card"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=300&h=180&fit=crop&auto=format" alt=""><strong>Super Deep Clean</strong><span>For heavily soiled homes</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-fridge.png" alt=""><span class="addon-label">Inside Fridge</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-oven.png" alt=""><span class="addon-label">Inside Oven</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-cabinets.png" alt=""><span class="addon-label">Inside Cabinets</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-windows.png" alt=""><span class="addon-label">Interior Windows</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-laundry.png" alt=""><span class="addon-label">Laundry & Folding</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-organization.png" alt=""><span class="addon-label">Organization</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-blinds.png" alt=""><span class="addon-label">Window Blinds</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-office.png" alt=""><span class="addon-label">Office Cleaning</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-washer.png" alt=""><span class="addon-label">Washer & Dryer</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-stairs.png" alt=""><span class="addon-label">Stairway Detail</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-hardwood.png" alt=""><span class="addon-label">Hardwood Care</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-tile.png" alt=""><span class="addon-label">Tile & Grout</span></li>
+            <li class="addon-card"><img src="assets/icons/addon-baseboards.png" alt=""><span class="addon-label">Baseboard Detail</span></li>
           </ul>
         </div>
       </div>

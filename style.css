@@ -1070,6 +1070,77 @@ a:hover {
   font-size: 14px;
 }
 
+/* --- Add-on card (shared base) --- */
+.addon-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--moss-border);
+  border-radius: 12px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  list-style: none;
+  font-family: inherit;
+}
+.addon-card:focus {
+  outline: 2px solid var(--lavender);
+  outline-offset: 2px;
+}
+.addon-card:hover {
+  border-color: rgba(196,181,253,0.3);
+  transform: translateY(-2px);
+}
+.addon-card.addon-selected {
+  border-color: var(--lavender);
+  background: rgba(196,181,253,0.1);
+}
+.addon-card.addon-selected .addon-label {
+  color: #fff;
+}
+.addon-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.addon-card .addon-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* --- Quote widget add-ons (hero card) --- */
+.quote-addons-heading {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 10px;
+}
+.quote-addons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.quote-addon-card {
+  padding: 10px 8px;
+}
+.quote-addon-card img {
+  width: 52px;
+  height: 52px;
+}
+.quote-addon-card .addon-label {
+  font-size: 10px;
+}
+
+/* --- Checklist section add-ons --- */
 .addons-grid {
   list-style: none;
   margin: 0;
@@ -1078,41 +1149,15 @@ a:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
-
-.addon-card {
-  background: var(--bg-card);
-  border: 1px solid var(--moss-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: all 0.3s ease;
+.addons-grid .addon-card {
+  padding: 20px 14px;
 }
-
-.addon-card:hover {
-  border-color: rgba(196,181,253,0.25);
-  transform: translateY(-2px);
+.addons-grid .addon-card img {
+  width: 72px;
+  height: 72px;
 }
-
-.addon-card img {
-  width: 100%;
-  height: 90px;
-  object-fit: cover;
-  display: block;
-}
-
-.addon-card strong {
-  display: block;
+.addons-grid .addon-card .addon-label {
   font-size: 13px;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 3px;
-  padding: 14px 14px 0;
-}
-
-.addon-card span {
-  display: block;
-  font-size: 11px;
-  color: var(--text-muted);
-  padding: 0 14px 16px;
 }
 
 @media (min-width: 768px) {
