@@ -85,60 +85,70 @@
           </div>
           <div class="hero-social">
             <div class="hero-avatars">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
-              <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
-              <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
+              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&h=60&fit=crop&crop=face&auto=format" alt="" width="44" height="44">
             </div>
             <p class="hero-proof">4.9/5 · Trusted by 2,000+ Austin homeowners</p>
           </div>
         </div>
         <div class="hero-quote-wrap" id="hero-quote">
           <div class="quote-widget">
-            <div class="quote-step quote-step-1" id="quote-step-1">
-              <p class="quote-label">STEP 1 OF 2</p>
-              <h3 class="quote-title">Get a free quote instantly!</h3>
-              <p class="quote-subtext">We'll send a rough estimate in 60 seconds</p>
+            <div class="widget-step quote-step quote-step-1" id="quote-step-1" data-step="1">
+              <p class="widget-step-label quote-label">STEP 1 OF 4</p>
+              <h3 class="quote-title">Get a Free Quote Now!</h3>
+              <p class="quote-subtext">We'll prepare your estimate in 60 seconds</p>
               <label for="quote-phone" class="visually-hidden">Phone number</label>
               <input type="tel" id="quote-phone" class="quote-input" placeholder="Your phone number" autocomplete="tel">
               <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-continue">Continue →</button>
               <p class="quote-privacy">🔒 No spam. We only contact you about your quote.</p>
             </div>
-            <div class="quote-step quote-step-2 hidden" id="quote-step-2">
-              <p class="quote-label">STEP 2 OF 2</p>
+            <div class="widget-step quote-step quote-step-2 step-hidden" id="quote-step-2" data-step="2">
+              <p class="widget-step-label quote-label">STEP 2 OF 4</p>
               <h3 class="quote-title">Tell us about your home</h3>
+              <button type="button" class="widget-back" id="quote-back-2" aria-label="Back to step 1">← Back</button>
               <div class="quote-grid">
-                <div><label for="quote-bedrooms">Bedrooms</label><select id="quote-bedrooms" class="quote-select"><option value="">Select</option><option value="studio">Studio</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div>
+                <div><label for="quote-bedrooms">Bedrooms</label><select id="quote-bedrooms" class="quote-select"><option value="">Select</option><option value="Studio">Studio</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div>
                 <div><label for="quote-bathrooms">Bathrooms</label><select id="quote-bathrooms" class="quote-select"><option value="">Select</option><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4+">4+</option></select></div>
-                <div><label for="quote-size">Home Size</label><select id="quote-size" class="quote-select"><option value="">Select</option><option value="under500">Under 500 sqft</option><option value="500-1000">500–1,000 sqft</option><option value="1000-1500">1,000–1,500 sqft</option><option value="1500-2000">1,500–2,000 sqft</option><option value="2000-2500">2,000–2,500 sqft</option><option value="2500-3000">2,500–3,000 sqft</option><option value="3000+">3,000+ sqft</option></select></div>
-                <div><label for="quote-type">Cleaning Type</label><select id="quote-type" class="quote-select"><option value="">Select</option><option value="standard">Standard Clean</option><option value="deep">Deep Clean</option><option value="move-out">Move Out Clean</option><option value="airbnb">Airbnb Turnover</option><option value="event">Event Cleaning</option></select></div>
+                <div><label for="quote-size">Home Size</label><select id="quote-size" class="quote-select"><option value="">Select</option><option value="0–1,000 sqft">0–1,000 sqft</option><option value="1,000–2,000 sqft">1,000–2,000 sqft</option><option value="2,000–3,000 sqft">2,000–3,000 sqft</option><option value="3,000+ sqft">3,000+ sqft</option></select></div>
+                <div><label for="quote-type">Cleaning Type</label><select id="quote-type" class="quote-select"><option value="">Select</option><option value="Standard Clean">Standard Clean</option><option value="Deep Clean">Deep Clean</option><option value="Move Out Clean">Move Out Clean</option><option value="Airbnb Turnover">Airbnb Turnover</option><option value="Event Cleaning">Event Cleaning</option><option value="Post-Construction">Post-Construction</option></select></div>
               </div>
-              <p class="quote-addons-heading">Add-ons (optional)</p>
-              <div class="quote-addons-grid" role="group" aria-label="Select add-on services">
-                <button type="button" class="addon-card quote-addon-card" data-addon="fridge"><img src="assets/icons/addon-fridge.png" alt=""><span class="addon-label">Inside Fridge</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="oven"><img src="assets/icons/addon-oven.png" alt=""><span class="addon-label">Inside Oven</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="cabinets"><img src="assets/icons/addon-cabinets.png" alt=""><span class="addon-label">Inside Cabinets</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="windows"><img src="assets/icons/addon-windows.png" alt=""><span class="addon-label">Interior Windows</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="laundry"><img src="assets/icons/addon-laundry.png" alt=""><span class="addon-label">Laundry & Folding</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="organization"><img src="assets/icons/addon-organization.png" alt=""><span class="addon-label">Organization</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="blinds"><img src="assets/icons/addon-blinds.png" alt=""><span class="addon-label">Window Blinds</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="office"><img src="assets/icons/addon-office.png" alt=""><span class="addon-label">Office Cleaning</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="washer"><img src="assets/icons/addon-washer.png" alt=""><span class="addon-label">Washer & Dryer</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="stairs"><img src="assets/icons/addon-stairs.png" alt=""><span class="addon-label">Stairway Detail</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="hardwood"><img src="assets/icons/addon-hardwood.png" alt=""><span class="addon-label">Hardwood Care</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="tile"><img src="assets/icons/addon-tile.png" alt=""><span class="addon-label">Tile & Grout</span></button>
-                <button type="button" class="addon-card quote-addon-card" data-addon="baseboards"><img src="assets/icons/addon-baseboards.png" alt=""><span class="addon-label">Baseboard Detail</span></button>
-              </div>
-              <label for="quote-details">Any special details? (optional)</label>
-              <textarea id="quote-details" class="quote-textarea" rows="2" placeholder="Any special details or add-ons? (optional)"></textarea>
-              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Get My Free Estimate →</button>
+              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-next-2">Continue →</button>
             </div>
-            <div class="quote-success hidden" id="quote-success">
-              <span class="quote-success-icon" aria-hidden="true">✅</span>
-              <h3 class="quote-success-title">You're all set!</h3>
-              <p class="quote-success-text">We'll call you within 60 seconds with your free estimate.</p>
-              <p class="quote-success-note">Check your phone — our Austin team is on it! 🎉</p>
+            <div class="widget-step quote-step quote-step-3 step-hidden" id="quote-step-3" data-step="3">
+              <p class="widget-step-label quote-label">STEP 3 OF 4</p>
+              <h3 class="quote-title">Customize your clean</h3>
+              <p class="quote-subtext">Select any optional add-ons (additional fee applies)</p>
+              <button type="button" class="widget-back" id="quote-back-3" aria-label="Back to step 2">← Back</button>
+              <div class="addon-grid" id="quote-addon-grid" role="group" aria-label="Select add-on services"></div>
+              <p class="addon-included-note">Items already included in your selected service are automatically removed from this list.</p>
+              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-next-3">Next: Your Details →</button>
+            </div>
+            <div class="widget-step quote-step quote-step-4 step-hidden" id="quote-step-4" data-step="4">
+              <p class="widget-step-label quote-label">STEP 4 OF 4</p>
+              <h3 class="quote-title">Almost done!</h3>
+              <p class="quote-subtext">We'll send your personalized quote to your email</p>
+              <button type="button" class="widget-back" id="quote-back-4" aria-label="Back to step 3">← Back</button>
+              <div class="quote-summary">
+                <span class="quote-summary-label">📋 Your Quote Summary</span>
+                <div class="quote-summary-text" id="quote-summary-text"></div>
+              </div>
+              <label for="quote-first-name" class="visually-hidden">First name</label>
+              <input type="text" id="quote-first-name" class="quote-input" placeholder="First name" autocomplete="given-name">
+              <label for="quote-last-name" class="visually-hidden">Last name</label>
+              <input type="text" id="quote-last-name" class="quote-input" placeholder="Last name" autocomplete="family-name">
+              <label for="quote-email" class="visually-hidden">Email address</label>
+              <input type="email" id="quote-email" class="quote-input" placeholder="your@email.com" autocomplete="email">
+              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Send My Free Quote →</button>
+              <p class="quote-privacy" style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px;">We'll review your details and send your personalized quote shortly.</p>
+            </div>
+            <div class="widget-success quote-success step-hidden" id="quote-success">
+              <span class="success-icon" aria-hidden="true">✅</span>
+              <h3>Your quote is on its way!</h3>
+              <p id="quote-success-email-msg">We'll review your details and send your personalized quote to <span id="quote-success-email-placeholder"></span> shortly.</p>
+              <p class="success-note">We typically respond within 60 minutes during business hours. 🎉</p>
             </div>
           </div>
         </div>
@@ -200,6 +210,14 @@
             <h3>Event Cleaning</h3>
             <p>Pre and post-event cleaning for Austin homes hosting parties or special occasions.</p>
             <ul class="service-bullets"><li>Pre-event prep clean</li><li>Post-event full clean</li><li>Trash removal</li><li>Quick turnaround</li></ul>
+            <a href="#hero-quote" class="service-link">Book Now <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="service-card fade-in">
+            <span class="service-accent"></span>
+            <div class="service-icon-box"><svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/><path d="M2 12h4M18 12h4"/></svg></div>
+            <h3>Post-Construction Cleaning</h3>
+            <p>Thorough cleanup after renovations, remodels, or new construction. We remove dust, debris, and residue to make your space move-in ready.</p>
+            <ul class="service-bullets"><li>Dust &amp; debris removal</li><li>Paint &amp; sticker removal</li><li>Deep surface cleaning</li><li>Final inspection ready</li></ul>
             <a href="#hero-quote" class="service-link">Book Now <span aria-hidden="true">→</span></a>
           </li>
         </ul>
@@ -338,7 +356,7 @@
         <h2 class="section-title">How It Works</h2>
         <p class="section-subtitle">Book your Austin house cleaning in 3 simple steps</p>
         <ol class="how-steps">
-          <li class="how-step fade-in"><span class="how-num">1</span><h3>Get a Free Quote</h3><p>Fill in your phone number and home details. Our Austin team sends a custom estimate in under 60 seconds.</p></li>
+          <li class="how-step fade-in"><span class="how-num">1</span><h3>Get a Free Quote Now!</h3><p>Fill in your phone number and home details. Our Austin team sends a custom estimate in under 60 seconds.</p></li>
           <li class="how-step fade-in"><span class="how-num">2</span><h3>We Schedule & Arrive</h3><p>Pick a date and time that works for you. We arrive on time with all professional supplies included.</p></li>
           <li class="how-step fade-in"><span class="how-num">3</span><h3>Enjoy Your Clean Home</h3><p>Relax while we transform your home. We leave it spotless, fresh, and ready to enjoy.</p></li>
         </ol>
@@ -366,12 +384,12 @@
         <h2 class="section-title">What Our Austin Customers Say</h2>
         <p class="section-subtitle">Trusted by homeowners, renters, and Airbnb hosts across Austin TX</p>
         <ul class="reviews-grid">
-          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Absolutely the best house cleaning service in Austin. They were on time, thorough, and left my home spotless. I've tried three other services and none compare. Booking again next month!"</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Sarah M.</p><p class="review-city">Austin, TX</p></div></div></li>
-          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Used them for a move-out clean and got my full deposit back. Professional, fast, and incredibly detailed. Highly recommend to anyone in the Austin area."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">James R.</p><p class="review-city">Round Rock, TX</p></div></div></li>
-          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"I manage three Airbnb properties and Austin House Cleaners handles all my turnovers. Reliable, consistent — my guests always comment on how clean everything is."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Maria L.</p><p class="review-city">Cedar Park, TX</p></div></div></li>
-          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Booked a deep cleaning and was blown away. They got into every corner I hadn't touched in months. Friendly, professional, and finished right on schedule."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">David K.</p><p class="review-city">Pflugerville, TX</p></div></div></li>
-          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"So easy to book and communicate with. They brought all supplies and the house smelled incredible after. Setting up a recurring bi-weekly schedule — can't recommend them enough."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Ashley T.</p><p class="review-city">Lakeway, TX</p></div></div></li>
-          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Fantastic from start to finish. Quick response, fair pricing, and exceptional cleaning quality. My wife was absolutely thrilled. This is our permanent go-to service in Austin."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Chris B.</p><p class="review-city">Georgetown, TX</p></div></div></li>
+          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Absolutely the best house cleaning service in Austin. They were on time, thorough, and left my home spotless. I've tried three other services and none compare. Booking again next month!"</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Sarah M.</p><p class="review-city">Austin, TX</p></div></div></li>
+          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Used them for a move-out clean and got my full deposit back. Professional, fast, and incredibly detailed. Highly recommend to anyone in the Austin area."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">James R.</p><p class="review-city">Round Rock, TX</p></div></div></li>
+          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"I manage three Airbnb properties and Austin House Cleaners handles all my turnovers. Reliable, consistent — my guests always comment on how clean everything is."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Maria L.</p><p class="review-city">Cedar Park, TX</p></div></div></li>
+          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Booked a deep cleaning and was blown away. They got into every corner I hadn't touched in months. Friendly, professional, and finished right on schedule."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">David K.</p><p class="review-city">Pflugerville, TX</p></div></div></li>
+          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"So easy to book and communicate with. They brought all supplies and the house smelled incredible after. Setting up a recurring bi-weekly schedule — can't recommend them enough."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Ashley T.</p><p class="review-city">Lakeway, TX</p></div></div></li>
+          <li class="review-card fade-in"><span class="review-quote-mark" aria-hidden="true">"</span><blockquote class="review-text">"Fantastic from start to finish. Quick response, fair pricing, and exceptional cleaning quality. My wife was absolutely thrilled. This is our permanent go-to service in Austin."</blockquote><div class="review-stars">★★★★★</div><div class="reviewer-row"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&h=80&fit=crop&crop=face&auto=format" alt="" class="review-avatar" width="48" height="48"><div><p class="review-name">Chris B.</p><p class="review-city">Georgetown, TX</p></div></div></li>
         </ul>
       </div>
     </section>
@@ -470,7 +488,7 @@
   </footer>
 
   <div class="floating-cta" id="floating-cta">
-    <a href="#hero-quote">Book Now — Get a Free Quote</a>
+    <a href="#hero-quote">Book Now — Get a Free Quote Now!</a>
   </div>
 
   <script type="application/ld+json">
