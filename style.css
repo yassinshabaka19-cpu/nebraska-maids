@@ -959,6 +959,82 @@ a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-quote-wrap {
+    width: 100%;
+    margin-top: 24px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-ctas {
+    flex-direction: column;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .checklist-tabs {
+    flex-wrap: wrap;
+  }
+  .areas-grid {
+    flex-wrap: wrap;
+  }
+  .contact-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .quote-grid {
+    grid-template-columns: 1fr;
+  }
+  .floating-cta {
+    font-size: 14px;
+    padding: 14px 24px;
+    padding-bottom: calc(14px + env(safe-area-inset-bottom));
+  }
+  .floating-cta a {
+    font-size: 14px;
+  }
+  /* Touch targets - min 44px for buttons and links */
+  button,
+  .btn,
+  a.btn,
+  .area-pill,
+  .checklist-tab,
+  .faq-q,
+  .nav-desktop a,
+  .nav-mobile a,
+  .footer-col a,
+  .addon-tile {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-col ul li a,
+  .nav-desktop a,
+  .nav-mobile a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
 /* --- Sections --- */
 .section {
   padding: 64px 0;
