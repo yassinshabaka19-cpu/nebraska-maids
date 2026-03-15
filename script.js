@@ -479,4 +479,12 @@
       }
     });
   }
+
+  // Hero video: show fallback until iframe loads to avoid black gap
+  var heroIframe = document.querySelector('.hero-bg-video iframe');
+  if (heroIframe) {
+    heroIframe.addEventListener('load', function() {
+      heroIframe.classList.add('loaded');
+    });
+  }
 })();
