@@ -2180,13 +2180,18 @@ a:hover {
   }
 }
 
-.hero-bg-video{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:0;}
-.hero-bg-video iframe{position:absolute;top:50%;left:50%;width:180%;height:180%;transform:translate(-50%,-50%);pointer-events:none;}
-.hero-bg-video iframe.loaded { opacity: 1; }
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
 /* Performance - faster loading */
 img { content-visibility: auto; }
-.hero-bg-video iframe { will-change: transform; }
 
 /* ================================================
    MOBILE — Full Professional Overhaul
@@ -2205,35 +2210,13 @@ img { content-visibility: auto; }
   .header-cta { display: none !important; }
   .nav-desktop { display: none !important; }
 
-  /* HERO — fix black gap, show video full screen */
+  /* HERO — full screen on mobile */
   .hero {
     min-height: 100svh;
     display: flex;
     align-items: stretch;
     position: relative;
     overflow: hidden;
-  }
-  .hero-bg-video {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-    background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&auto=format&fit=crop&q=85');
-    background-size: cover !important;
-    background-position: center !important;
-  }
-  .hero-bg-video iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
   }
   .hero-overlay {
     position: absolute;
