@@ -951,14 +951,6 @@ a:hover {
   color: var(--lavender);
 }
 
-@media (max-width: 767px) {
-  .trust-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-}
-
 /* --- Sections --- */
 .section {
   padding: 64px 0;
@@ -2126,12 +2118,6 @@ a:hover {
   background: var(--lavender-deep);
 }
 
-@media (max-width: 767px) {
-  .floating-cta {
-    display: block;
-  }
-}
-
 @media (min-width: 768px) {
   .floating-cta {
     display: none !important;
@@ -2201,130 +2187,170 @@ a:hover {
 img { content-visibility: auto; }
 .hero-bg-video iframe { will-change: transform; }
 
-/* ============================================
-   MOBILE - Complete Responsive Overhaul
-   ============================================ */
+/* ================================================
+   MOBILE RESPONSIVE — Professional Clean Layout
+   Inspired by sanjosemaids.com mobile experience
+   ================================================ */
 
 @media (max-width: 768px) {
 
-  /* Hide quote widget in hero on mobile */
-  .hero-quote-wrap { display: none !important; }
-
-  /* Hero */
-  .hero { min-height: 100svh; align-items: flex-end; padding-bottom: 0; }
-  .hero-inner { flex-direction: column; padding: 90px 20px 48px; gap: 0; justify-content: flex-end; }
-  .hero-left { width: 100%; }
-  .hero-badge { font-size: 12px; padding: 6px 14px; margin-bottom: 16px; }
-  .hero-title { font-size: 2rem; line-height: 1.2; margin-bottom: 12px; }
-  .hero-subtitle { font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
-  .hero-ctas { flex-direction: column; gap: 10px; width: 100%; margin-bottom: 20px; }
-  .hero-ctas .btn { width: 100%; text-align: center; padding: 16px; font-size: 16px; min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
-  .hero-social { gap: 10px; }
-  .hero-proof { font-size: 13px; }
-
-  /* Add sticky bottom call bar */
-  body::after {
-    content: "📞  Call or Text (512) 555-0100";
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--lavender, #a78bfa);
-    color: #000;
-    text-align: center;
-    padding: 14px 20px;
-    font-weight: 700;
-    font-size: 15px;
-    z-index: 9999;
-    letter-spacing: 0.01em;
-  }
-  body { padding-bottom: 56px; }
-
-  /* Hide desktop floating CTA on mobile - use sticky bar instead */
-  .floating-cta { display: none !important; }
-
-  /* Container */
+  /* ---- GLOBAL ---- */
   .container { padding: 0 20px; }
   .section { padding: 56px 0; }
-  .section-title { font-size: 1.75rem; line-height: 1.2; }
-  .section-subtitle { font-size: 14px; }
+  .section-title { font-size: 1.75rem; line-height: 1.25; margin-bottom: 12px; }
+  .section-subtitle { font-size: 14px; line-height: 1.7; }
+  .btn { min-height: 52px; font-size: 16px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
 
-  /* Trust strip */
-  .trust-strip { padding: 20px 0; }
-  .trust-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .trust-list li { font-size: 13px; }
+  /* ---- ANNOUNCEMENT BANNER ---- */
+  .announcement-banner { font-size: 13px; padding: 10px 40px 10px 16px; }
 
-  /* Services */
-  .services-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  /* ---- HEADER ---- */
+  .site-header .header-inner { padding: 0 20px; height: 60px; }
+  .header-cta { display: none !important; }
+  .nav-desktop { display: none !important; }
+
+  /* ---- HERO ---- */
+  .hero { min-height: 100svh; display: flex; align-items: flex-end; }
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 20px 48px;
+    gap: 0;
+    width: 100%;
+  }
+  .hero-left { width: 100%; }
+  .hero-quote-wrap { display: none !important; }
+  .hero-badge { font-size: 12px; padding: 6px 14px; margin-bottom: 20px; display: inline-flex; }
+  .hero-title { font-size: 2rem; line-height: 1.2; margin-bottom: 14px; }
+  .hero-subtitle { font-size: 14px; line-height: 1.65; margin-bottom: 28px; max-width: 100%; }
+  .hero-ctas { flex-direction: column; gap: 12px; width: 100%; margin-bottom: 24px; }
+  .hero-ctas .btn { width: 100%; text-align: center; padding: 16px 24px; }
+  .hero-social { flex-direction: row; align-items: center; gap: 12px; }
+  .hero-avatars img { width: 34px; height: 34px; }
+  .hero-proof { font-size: 13px; }
+
+  /* ---- MOBILE QUOTE SECTION (shown below hero on mobile) ---- */
+  .trust-strip { padding: 32px 20px; }
+  .trust-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0; padding: 0; }
+  .trust-list li { font-size: 13px; gap: 8px; }
+
+  /* ---- SERVICES ---- */
+  .services-grid { grid-template-columns: 1fr !important; gap: 14px; }
   .service-card { padding: 24px 20px; }
+  .service-card h3 { font-size: 18px; }
 
-  /* Checklist */
+  /* ---- CHECKLIST ---- */
   .checklist-tabs { flex-wrap: wrap; gap: 8px; }
-  .checklist-tab { font-size: 13px; padding: 8px 12px; }
-  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .checklist-table { font-size: 13px; min-width: 480px; }
+  .checklist-tab { font-size: 13px; padding: 8px 14px; }
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
+  .checklist-table { font-size: 13px; min-width: 460px; }
 
-  /* Addons */
-  .addons-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  /* ---- ADDONS ---- */
+  .addons-title { font-size: 1.3rem; }
+  .addons-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 10px; }
   .addon-card { border-radius: 12px; }
-  .addon-img-wrap { height: 80px; }
-  .addon-img-wrap img { height: 80px !important; }
-  .addon-card-title { font-size: 12px; }
-  .addon-card-desc { font-size: 11px; }
+  .addon-img-wrap { height: 70px; }
+  .addon-img-wrap img { height: 70px !important; object-fit: cover; }
+  .addon-card-body { padding: 10px 8px; }
+  .addon-card-title { font-size: 11px; font-weight: 600; }
+  .addon-card-desc { display: none; }
 
-  /* How it works */
-  .how-steps { flex-direction: column; gap: 28px; }
-  .how-step { padding: 0 8px; }
+  /* ---- HOW IT WORKS ---- */
+  .how-steps { flex-direction: column; gap: 32px; }
+  .how-step { padding: 0; }
+  .how-num { width: 44px; height: 44px; font-size: 18px; margin-bottom: 16px; }
 
-  /* Why us */
-  .why-grid { grid-template-columns: 1fr !important; gap: 14px; }
+  /* ---- WHY US ---- */
+  .why-grid { grid-template-columns: 1fr 1fr !important; gap: 14px; }
+  .why-card { padding: 20px 16px; }
+  .why-card h3 { font-size: 15px; }
+  .why-card p { font-size: 13px; }
 
-  /* Reviews */
+  /* ---- REVIEWS ---- */
   .reviews-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .review-card { padding: 24px 20px; }
 
-  /* Areas */
-  .areas-grid { gap: 8px; }
-  .area-pill { font-size: 12px; padding: 7px 12px; }
+  /* ---- AREAS ---- */
+  .areas-grid { gap: 8px; justify-content: flex-start; }
+  .area-pill { font-size: 12px; padding: 7px 12px; border-radius: 20px; }
+  .areas-copy { font-size: 14px; line-height: 1.7; margin-top: 24px; }
 
-  /* Blog */
+  /* ---- BLOG ---- */
   div[style*="grid-template-columns: repeat(auto-fit"] {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 16px !important;
+    margin-top: 32px !important;
   }
 
-  /* FAQ */
-  .faq-q { font-size: 14px; padding: 16px; }
-  .faq-a p { font-size: 14px; }
+  /* ---- FAQ ---- */
+  .faq-list { gap: 0; }
+  .faq-q { font-size: 14px; padding: 18px 16px; }
+  .faq-a p { font-size: 14px; line-height: 1.7; padding: 0 16px 18px; }
 
-  /* CTA section */
-  .cta-title { font-size: 1.6rem; }
-  .cta-buttons { flex-direction: column; gap: 10px; }
-  .cta-buttons .btn { width: 100%; text-align: center; min-height: 52px; display: flex; align-items: center; justify-content: center; }
+  /* ---- CTA SECTION ---- */
+  .cta-section { padding: 56px 20px; }
+  .cta-title { font-size: 1.6rem; line-height: 1.25; }
+  .cta-subtitle { font-size: 14px; }
+  .cta-buttons { flex-direction: column; gap: 12px; }
+  .cta-buttons .btn { width: 100%; }
 
-  /* Contact */
-  .contact-layout { flex-direction: column; gap: 36px; }
+  /* ---- CONTACT ---- */
+  .contact-layout { flex-direction: column; gap: 40px; }
+  .maps-embed { margin-bottom: 0 !important; border-radius: 12px; overflow: hidden; }
   .contact-form input,
   .contact-form select,
-  .contact-form textarea { font-size: 16px; }
-  .maps-embed { display: none; }
+  .contact-form textarea { font-size: 16px; padding: 14px 16px; }
 
-  /* Footer */
-  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+  /* ---- FOOTER ---- */
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
   .footer-social { justify-content: center; }
+  .footer-logo { font-size: 16px; }
+  .footer-tagline { font-size: 13px; }
 
-  /* Header */
-  .header-cta { display: none !important; }
-  .site-header .header-inner { padding: 0 16px; }
+  /* ---- FLOATING CTA ---- */
+  .floating-cta { display: none !important; }
 
-  /* Announcement banner */
-  .announcement-banner { font-size: 13px; }
+  /* ---- STICKY BOTTOM BAR ---- */
+  .mobile-sticky-bar {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--bg-card, #1a1a2e);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 16px;
+    gap: 10px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  }
+  .mobile-sticky-bar a {
+    flex: 1;
+    text-align: center;
+    padding: 13px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .mobile-sticky-bar .msb-book {
+    background: var(--lavender, #a78bfa);
+    color: #000;
+  }
+  .mobile-sticky-bar .msb-call {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  body { padding-bottom: 74px; }
 }
 
 @media (max-width: 420px) {
   .hero-title { font-size: 1.75rem; }
+  .why-grid { grid-template-columns: 1fr !important; }
   .footer-grid { grid-template-columns: 1fr !important; }
-  .addons-grid { grid-template-columns: 1fr 1fr !important; }
-  .trust-list { grid-template-columns: 1fr 1fr; }
+  .addons-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }
