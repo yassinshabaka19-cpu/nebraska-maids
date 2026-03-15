@@ -2061,6 +2061,23 @@ a:hover {
   color: var(--lavender);
   text-decoration: none;
 }
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.footer-social a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+.footer-social a:hover {
+  color: var(--lavender);
+}
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+}
 
 @media (min-width: 768px) {
   .footer-grid {
