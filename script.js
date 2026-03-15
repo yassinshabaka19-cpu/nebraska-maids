@@ -128,8 +128,8 @@
   ];
 
   var exclusions = {
-    "Deep Clean": ["tilegrout", "baseboard"],
-    "Move Out Clean": ["tilegrout", "cabinets", "baseboard"],
+    "Deep Clean": ["tilegrout", "baseboard", "wallstain"],
+    "Move Out Clean": ["tilegrout", "cabinets", "baseboard", "wallstain"],
     "Post-Construction": ["tilegrout", "baseboard", "superdeep"]
   };
 
