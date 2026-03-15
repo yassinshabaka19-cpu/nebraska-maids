@@ -2371,3 +2371,45 @@ a:hover {
 /* Performance - faster loading */
 img { content-visibility: auto; }
 .hero-bg-video iframe { will-change: transform; }
+
+/* Mobile Hero - Hide quote widget, show clean CTA only */
+@media (max-width: 768px) {
+  .hero-quote-wrap { display: none !important; }
+  .hero { min-height: 100svh; display: flex; align-items: center; }
+  .hero-inner { padding-top: 80px; padding-bottom: 60px; align-items: flex-start; }
+  .hero-left { width: 100%; }
+  .hero-badge { font-size: 12px; margin-bottom: 16px; }
+  .hero-title { font-size: 2.2rem; margin-bottom: 16px; }
+  .hero-subtitle { font-size: 15px; margin-bottom: 24px; }
+  .hero-ctas { flex-direction: column; width: 100%; gap: 12px; margin-bottom: 24px; }
+  .hero-ctas .btn { width: 100%; text-align: center; min-height: 52px; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .hero-social { flex-direction: column; gap: 8px; }
+  .hero-avatars img { width: 36px; height: 36px; }
+
+  /* Fix floating Book Now bar overlapping content */
+  .floating-cta { bottom: 0; left: 0; right: 0; border-radius: 0; }
+  body { padding-bottom: 60px; }
+
+  /* Fix trust strip wrapping */
+  .trust-strip .trust-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px 16px;
+  }
+  .trust-list li { font-size: 13px; gap: 8px; }
+
+  /* Section titles */
+  .section-title { font-size: 1.7rem; line-height: 1.25; }
+  .section-subtitle { font-size: 14px; }
+
+  /* Services stack single column */
+  .services-grid { grid-template-columns: 1fr !important; }
+
+  /* Reviews single column */
+  .reviews-grid { grid-template-columns: 1fr !important; }
+
+  /* Footer fix */
+  .footer-grid { grid-template-columns: 1fr !important; gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+}
