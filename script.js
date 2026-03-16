@@ -326,6 +326,7 @@
         hasError = true;
       }
       if (hasError) return;
+      var fd = new FormData(); fd.append("name", firstVal+" "+lastVal); fd.append("email", emailVal); fd.append("phone", document.getElementById("quote-phone") ? document.getElementById("quote-phone").value.trim() : ""); fd.append("_subject", "Quote from "+firstVal); fetch("https://formspree.io/f/meerrabr",{method:"POST",body:fd,headers:{"Accept":"application/json"}}).catch(function(){});
       widgetFirstName = firstVal;
       widgetLastName = lastVal;
       widgetEmail = emailVal;
