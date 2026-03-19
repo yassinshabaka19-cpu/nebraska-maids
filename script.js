@@ -187,17 +187,26 @@
             document.body.appendChild(card);
           }
           document.body.classList.add("modal-active");
-          // Pre-populate addon grid with Standard Clean as default after modal opens
-          setTimeout(function(){
-            var grid = document.getElementById('quote-addon-grid');
-            var reveal = document.getElementById('quote-reveal-section');
-            console.log('MODAL OPEN - grid:', grid, 'reveal:', reveal);
-          }, 500);
-          // Re-query addon grid after card is in DOM
+          // Re-query addon grid after card is moved to body, then pre-populate
           setTimeout(function(){
             addonGridEl = document.getElementById('quote-addon-grid');
-            console.log('addonGridEl after move:', addonGridEl);
-          }, 400);
+            // Pre-select Standard Clean if nothing is selected yet
+            var typeInput = document.getElementById('quote-type');
+            var alreadySelected = document.querySelector('.quote-type-btn.selected');
+            if (!alreadySelected) {
+              var defaultBtn = document.querySelector('.quote-type-btn[data-value="Standard Clean"]');
+              if (defaultBtn) {
+                document.querySelectorAll('.quote-type-btn').forEach(function(b){ b.classList.remove('selected'); });
+                defaultBtn.classList.add('selected');
+                if (typeInput) typeInput.value = 'Standard Clean';
+                widgetCleaningType = 'Standard Clean';
+              }
+            }
+            // Always build the addon grid on open
+            var revealSection = document.getElementById('quote-reveal-section');
+            if (revealSection) revealSection.style.display = 'block';
+            buildAddonGrid();
+          }, 420);
         }
       }
     }, 350);
@@ -526,22 +535,7 @@
       var revealSection = document.getElementById('quote-reveal-section');
       if(revealSection){ revealSection.style.display='block'; }
       addonGridEl = document.getElementById('quote-addon-grid');
-      if(addonGridEl){
-        var excluded = exclusions[widgetCleaningType] || [];
-        var filtered = allAddons.filter(function(a){ return excluded.indexOf(a.id)===-1; });
-        addonGridEl.innerHTML='';
-        widgetAddons=[];
-        filtered.forEach(function(addon){
-          var tile=document.createElement('div');
-          tile.className='addon-tile';
-          tile.innerHTML='<span class="addon-icon">'+addon.svg+'</span><span class="addon-label">'+addon.label+'</span>';
-          tile.addEventListener('click',function(){
-            if(tile.classList.contains('addon-selected')){tile.classList.remove('addon-selected');widgetAddons=widgetAddons.filter(function(id){return id!==addon.id;});}
-            else{tile.classList.add('addon-selected');widgetAddons.push(addon.id);}
-          });
-          addonGridEl.appendChild(tile);
-        });
-      }
+      buildAddonGrid();
       setTimeout(function(){ var rs=document.getElementById('quote-reveal-section'); if(rs) rs.scrollIntoView({behavior:'smooth',block:'nearest'}); },150);
     }
     var freqBtn = e.target.closest('.quote-freq-btn');
