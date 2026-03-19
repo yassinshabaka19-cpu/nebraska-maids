@@ -187,6 +187,12 @@
             document.body.appendChild(card);
           }
           document.body.classList.add("modal-active");
+          // Pre-populate addon grid with Standard Clean as default after modal opens
+          setTimeout(function(){
+            var grid = document.getElementById('quote-addon-grid');
+            var reveal = document.getElementById('quote-reveal-section');
+            console.log('MODAL OPEN - grid:', grid, 'reveal:', reveal);
+          }, 500);
           // Re-query addon grid after card is in DOM
           setTimeout(function(){
             addonGridEl = document.getElementById('quote-addon-grid');
