@@ -170,30 +170,32 @@
                     </div>
                     <input type="hidden" id="quote-type" value="">
                   </div>
-                  <div class="quote-field-full">
-                    <label>How often do you need cleaning?*</label>
-                    <div class="quote-freq-btns">
-                      <button type="button" class="quote-freq-btn" data-value="One Time">One Time</button>
-                      <button type="button" class="quote-freq-btn" data-value="Weekly">Weekly</button>
-                      <button type="button" class="quote-freq-btn quote-freq-popular" data-value="Monthly"><span class="freq-popular-badge">MOST POPULAR</span>Monthly</button>
-                      <button type="button" class="quote-freq-btn" data-value="Quarterly">Quarterly</button>
+                  <div class="quote-field-full quote-reveal-section" id="quote-reveal-section" style="display:none">
+                    <div class="quote-field-full">
+                      <label>How often do you need cleaning?*</label>
+                      <div class="quote-freq-btns">
+                        <button type="button" class="quote-freq-btn" data-value="One Time">One Time</button>
+                        <button type="button" class="quote-freq-btn" data-value="Weekly">Weekly</button>
+                        <button type="button" class="quote-freq-btn quote-freq-popular" data-value="Monthly"><span class="freq-popular-badge">MOST POPULAR</span>Monthly</button>
+                        <button type="button" class="quote-freq-btn" data-value="Quarterly">Quarterly</button>
+                      </div>
+                      <input type="hidden" id="quote-frequency" value="">
                     </div>
-                    <input type="hidden" id="quote-frequency" value="">
-                  </div>
-                  <div class="quote-field-full">
-                    <label>Add Extra Services <span class="quote-optional-hint">(Optional)</span></label>
-                    <div class="addon-grid" id="quote-addon-grid" role="group" aria-label="Select add-on services"></div>
-                  </div>
-                  <div class="quote-field-full quote-contact-section">
-                    <p class="quote-contact-label">Your Contact Information</p>
-                    <div class="quote-contact-grid">
-                      <div class="quote-field"><label for="quote-first-name">First Name*</label><input type="text" id="quote-first-name" class="quote-input" placeholder="ex. Jane" autocomplete="given-name"></div>
-                      <div class="quote-field"><label for="quote-last-name">Last Name*</label><input type="text" id="quote-last-name" class="quote-input" placeholder="ex. Smith" autocomplete="family-name"></div>
-                      <div class="quote-field quote-field-full-row"><label for="quote-email">Email*</label><input type="email" id="quote-email" class="quote-input" placeholder="email@example.com" autocomplete="email"></div>
+                    <div class="quote-field-full">
+                      <label>Add Extra Services <span class="quote-optional-hint">(Optional)</span></label>
+                      <div class="addon-grid" id="quote-addon-grid" role="group" aria-label="Select add-on services"></div>
                     </div>
+                    <div class="quote-field-full quote-contact-section">
+                      <p class="quote-contact-label">Your Contact Information</p>
+                      <div class="quote-contact-grid">
+                        <div class="quote-field"><label for="quote-first-name">First Name*</label><input type="text" id="quote-first-name" class="quote-input" placeholder="ex. Jane" autocomplete="given-name"></div>
+                        <div class="quote-field"><label for="quote-last-name">Last Name*</label><input type="text" id="quote-last-name" class="quote-input" placeholder="ex. Smith" autocomplete="family-name"></div>
+                        <div class="quote-field quote-field-full-row"><label for="quote-email">Email*</label><input type="email" id="quote-email" class="quote-input" placeholder="email@example.com" autocomplete="email"></div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Get My Free Quote →</button>
+                    <p class="quote-privacy" style="text-align:center;margin-top:12px;">Need help? <a href="tel:+17373775656" style="color:var(--gold)">Text (737) 377-5656</a></p>
                   </div>
-                  <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Get My Free Quote →</button>
-                  <p class="quote-privacy" style="text-align:center;margin-top:12px;">Need help? <a href="tel:+17373775656" style="color:var(--gold)">Text (737) 377-5656</a></p>
                 </div>
               </div>
             </div>

@@ -494,8 +494,15 @@ typeBtns.forEach(function(btn){
     btn.classList.add('selected');
     var typeInput = document.getElementById('quote-type');
     if(typeInput) typeInput.value = btn.getAttribute('data-value');
-    // re-render addons based on type
-    if(typeof renderAddons === 'function') renderAddons();
+    widgetCleaningType = btn.getAttribute('data-value');
+    // Build addons for selected type
+    buildAddonGrid();
+    // Reveal frequency/addons/contact section
+    var revealSection = document.getElementById('quote-reveal-section');
+    if(revealSection){
+      revealSection.style.display = 'block';
+      setTimeout(function(){ revealSection.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
+    }
   });
 });
 
