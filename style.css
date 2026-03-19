@@ -2431,12 +2431,12 @@ img { content-visibility: auto; }
 .quote-type-btn strong{font-size:13px;font-weight:700}
 .quote-type-btn span{font-size:11px;color:var(--text-muted)}
 .quote-type-btn:hover{border-color:var(--lavender);background:var(--lavender-subtle)}
-.quote-type-btn.selected{border-color:var(--gold);background:rgba(200,169,110,0.12)}
-.quote-type-btn.selected strong{color:var(--gold)}
+.quote-type-btn.selected{border-color:var(--lavender);background:var(--lavender-subtle)}
+.quote-type-btn.selected strong{color:var(--lavender)}
 .quote-freq-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .quote-freq-btn{background:var(--bg-elevated);border:1.5px solid var(--moss-border);border-radius:var(--radius-md);padding:12px 8px;cursor:pointer;font-size:13px;font-weight:600;color:var(--white);display:flex;flex-direction:column;align-items:center;gap:4px;transition:all 0.2s}
 .quote-freq-btn:hover{border-color:var(--lavender);background:var(--lavender-subtle)}
-.quote-freq-btn.selected{border-color:var(--gold);background:rgba(200,169,110,0.12);color:var(--gold)}
+.quote-freq-btn.selected{border-color:var(--lavender);background:var(--lavender-subtle);color:var(--lavender)}
 .freq-popular-badge{font-size:9px;font-weight:700;background:var(--gold);color:#111;border-radius:99px;padding:2px 7px;letter-spacing:0.05em}
 .quote-contact-section{border-top:1px solid var(--moss-border);padding-top:20px;margin-top:8px}
 .quote-contact-label{font-size:15px!important;font-weight:700!important;color:var(--white)!important;margin-bottom:14px!important;display:block}
@@ -2485,3 +2485,8 @@ body.modal-active .quote-modal-card { display: block !important; }
   border-radius: 20px !important;
   box-shadow: 0 32px 100px rgba(0,0,0,0.8) !important;
 }
+
+/* FORCE FULLSCREEN MODAL */
+body.modal-active{overflow:hidden!important}
+body.modal-active .quote-modal-overlay{display:block!important;position:fixed!important;inset:0!important;background:rgba(0,0,0,0.85)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;z-index:9998!important}
+body.modal-active .quote-modal-card{display:block!important;position:fixed!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;z-index:9999!important;width:min(700px,92vw)!important;max-height:88vh!important;overflow-y:auto!important;background:var(--bg-base)!important;border:1px solid rgba(255,255,255,0.1)!important;border-radius:20px!important;box-shadow:0 32px 100px rgba(0,0,0,0.9)!important}

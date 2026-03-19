@@ -499,6 +499,8 @@ typeBtns.forEach(function(btn){
     var typeInput = document.getElementById('quote-type');
     if(typeInput) typeInput.value = btn.getAttribute('data-value');
     widgetCleaningType = btn.getAttribute('data-value');
+    // Re-query addon grid in case DOM updated
+    addonGridEl = document.getElementById('quote-addon-grid');
     // Build addons for selected type
     if(typeof buildAddonGrid === 'function') buildAddonGrid();
     // Reveal frequency/addons/contact section
