@@ -532,11 +532,14 @@ document.body.addEventListener('click', function(e){
     revealSection.style.visibility = 'visible';
     revealSection.style.opacity = '1';
   }
+  var cleanType = widgetCleaningType;
   var grid = document.getElementById('quote-addon-grid');
-  if(grid){
-    var excluded = exclusions[widgetCleaningType] || [];
+  console.log('RENDER ADDONS - type:', cleanType, 'grid:', grid, 'allAddons:', allAddons.length);
+  if(grid && allAddons.length > 0){
+    var excluded = exclusions[cleanType] || [];
     var filtered = allAddons.filter(function(a){ return excluded.indexOf(a.id) === -1; });
     grid.innerHTML = '';
+    widgetAddons = [];
     filtered.forEach(function(addon){
       var tile = document.createElement('div');
       tile.className = 'addon-tile';
@@ -553,6 +556,9 @@ document.body.addEventListener('click', function(e){
       });
       grid.appendChild(tile);
     });
+    console.log('RENDERED', filtered.length, 'tiles');
+  } else {
+    console.log('FAILED - grid null or allAddons empty');
   }
   setTimeout(function(){
     var rs = document.getElementById('quote-reveal-section');
