@@ -172,14 +172,31 @@
         step.style.opacity = "1";
         if (n === 1) { step.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
         // Activate modal overlay for step 2
-        if (n === 2) { document.body.classList.add("modal-active"); }
+        if (n === 2) {
+          // Move modal card to body so it isn't trapped in hero layout
+          var overlay = document.getElementById('quote-modal-overlay');
+          var card = document.querySelector('.quote-modal-card');
+          if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'quote-modal-overlay';
+            overlay.className = 'quote-modal-overlay';
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', function(){ showStep(1); });
+          }
+          if (card && card.parentElement !== document.body) {
+            document.body.appendChild(card);
+          }
+          document.body.classList.add("modal-active");
+          // Re-query addon grid after card is in DOM
+          addonGridEl = document.getElementById('quote-addon-grid');
+        }
       }
     }, 350);
   }
 
   function buildAddonGrid() {
     addonGridEl = document.getElementById("quote-addon-grid");
-    if (!addonGridEl) return;
+    if (!addonGridEl) { console.warn("addon grid not found"); return; }
     var cleaningType = widgetCleaningType;
     var excluded = exclusions[cleaningType] || [];
     var filtered = allAddons.filter(function (a) {
