@@ -178,6 +178,7 @@
   }
 
   function buildAddonGrid() {
+    addonGridEl = document.getElementById("quote-addon-grid");
     if (!addonGridEl) return;
     var cleaningType = widgetCleaningType;
     var excluded = exclusions[cleaningType] || [];
