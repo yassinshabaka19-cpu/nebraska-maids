@@ -511,7 +511,7 @@
 
 
 // ── NEW MODAL HANDLERS ──
-// Use event delegation on body for type buttons (added after modal moves to body)
+// Use event delegation for type buttons
 document.body.addEventListener('click', function(e){
   var btn = e.target.closest('.quote-type-btn');
   if(!btn) return;
@@ -521,12 +521,36 @@ document.body.addEventListener('click', function(e){
   if(typeInput) typeInput.value = btn.getAttribute('data-value');
   widgetCleaningType = btn.getAttribute('data-value');
   var revealSection = document.getElementById('quote-reveal-section');
-  if(revealSection){ revealSection.style.display='block'; }
-  addonGridEl = document.getElementById('quote-addon-grid');
-  if(addonGridEl){ buildAddonGrid(); }
+  if(revealSection){
+    revealSection.style.display = 'block';
+    revealSection.style.visibility = 'visible';
+    revealSection.style.opacity = '1';
+  }
+  var grid = document.getElementById('quote-addon-grid');
+  if(grid){
+    var excluded = exclusions[widgetCleaningType] || [];
+    var filtered = allAddons.filter(function(a){ return excluded.indexOf(a.id) === -1; });
+    grid.innerHTML = '';
+    filtered.forEach(function(addon){
+      var tile = document.createElement('div');
+      tile.className = 'addon-tile';
+      tile.setAttribute('data-id', addon.id);
+      tile.innerHTML = '<span class="addon-icon">' + addon.svg + '</span><span class="addon-label">' + addon.label + '</span>';
+      tile.addEventListener('click', function(){
+        if(tile.classList.contains('addon-selected')){
+          tile.classList.remove('addon-selected');
+          widgetAddons = widgetAddons.filter(function(id){ return id !== addon.id; });
+        } else {
+          tile.classList.add('addon-selected');
+          widgetAddons.push(addon.id);
+        }
+      });
+      grid.appendChild(tile);
+    });
+  }
   setTimeout(function(){
     var rs = document.getElementById('quote-reveal-section');
-    if(rs) rs.scrollIntoView({behavior:'smooth',block:'nearest'});
+    if(rs) rs.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 150);
 });
 
