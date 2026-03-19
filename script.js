@@ -500,7 +500,7 @@ typeBtns.forEach(function(btn){
     if(typeInput) typeInput.value = btn.getAttribute('data-value');
     widgetCleaningType = btn.getAttribute('data-value');
     // Build addons for selected type
-    buildAddonGrid();
+    if(typeof buildAddonGrid === 'function') buildAddonGrid();
     // Reveal frequency/addons/contact section
     var revealSection = document.getElementById('quote-reveal-section');
     if(revealSection){
