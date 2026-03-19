@@ -521,10 +521,13 @@ typeBtns.forEach(function(btn){
     if(typeInput) typeInput.value = btn.getAttribute('data-value');
     widgetCleaningType = btn.getAttribute('data-value');
     // Re-query and build after short delay to ensure card is in DOM
+    var revealSection = document.getElementById('quote-reveal-section');
+    if(revealSection){ revealSection.style.display='block'; }
     setTimeout(function(){
       addonGridEl = document.getElementById('quote-addon-grid');
-      if(addonGridEl && typeof buildAddonGrid === 'function') buildAddonGrid();
-    }, 50);
+      if(addonGridEl){ buildAddonGrid(); }
+      if(revealSection){ revealSection.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    }, 100);
     // Reveal frequency/addons/contact section
     var revealSection = document.getElementById('quote-reveal-section');
     if(revealSection){
