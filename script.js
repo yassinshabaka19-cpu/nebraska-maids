@@ -517,7 +517,26 @@
 
 
 // ── NEW MODAL HANDLERS ──
-// Use event delegation for type buttons
+
+
+// Frequency buttons
+var freqBtns = document.querySelectorAll('.quote-freq-btn');
+freqBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    freqBtns.forEach(function(b){ b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    var freqInput = document.getElementById('quote-frequency');
+    if(freqInput) freqInput.value = btn.getAttribute('data-value');
+  });
+});
+
+// Back button on modal
+var modalBack = document.getElementById('quote-back-2');
+if(modalBack){
+  modalBack.addEventListener('click', function(){
+    var step2 = document.getElementById('quote-step-2');
+    var step1 = document.getElementById('quote-step-1');
+  // Use event delegation for type buttons
 document.body.addEventListener('click', function(e){
   var btn = e.target.closest('.quote-type-btn');
   if(!btn) return;
@@ -565,24 +584,6 @@ document.body.addEventListener('click', function(e){
     if(rs) rs.scrollIntoView({behavior:'smooth', block:'nearest'});
   }, 150);
 });
-
-// Frequency buttons
-var freqBtns = document.querySelectorAll('.quote-freq-btn');
-freqBtns.forEach(function(btn){
-  btn.addEventListener('click', function(){
-    freqBtns.forEach(function(b){ b.classList.remove('selected'); });
-    btn.classList.add('selected');
-    var freqInput = document.getElementById('quote-frequency');
-    if(freqInput) freqInput.value = btn.getAttribute('data-value');
-  });
-});
-
-// Back button on modal
-var modalBack = document.getElementById('quote-back-2');
-if(modalBack){
-  modalBack.addEventListener('click', function(){
-    var step2 = document.getElementById('quote-step-2');
-    var step1 = document.getElementById('quote-step-1');
     if(step2){ step2.classList.add('step-hidden'); step2.style.display=''; }
     if(step1){ step1.classList.remove('step-hidden'); }
   });
