@@ -513,78 +513,55 @@
       }
     });
   }
+
+  // Type button clicks - event delegation
+  document.body.addEventListener('click', function(e){
+    var typeBtn = e.target.closest('.quote-type-btn');
+    if(typeBtn){
+      document.querySelectorAll('.quote-type-btn').forEach(function(b){ b.classList.remove('selected'); });
+      typeBtn.classList.add('selected');
+      var typeInput = document.getElementById('quote-type');
+      if(typeInput) typeInput.value = typeBtn.getAttribute('data-value');
+      widgetCleaningType = typeBtn.getAttribute('data-value');
+      var revealSection = document.getElementById('quote-reveal-section');
+      if(revealSection){ revealSection.style.display='block'; }
+      addonGridEl = document.getElementById('quote-addon-grid');
+      if(addonGridEl){
+        var excluded = exclusions[widgetCleaningType] || [];
+        var filtered = allAddons.filter(function(a){ return excluded.indexOf(a.id)===-1; });
+        addonGridEl.innerHTML='';
+        widgetAddons=[];
+        filtered.forEach(function(addon){
+          var tile=document.createElement('div');
+          tile.className='addon-tile';
+          tile.innerHTML='<span class="addon-icon">'+addon.svg+'</span><span class="addon-label">'+addon.label+'</span>';
+          tile.addEventListener('click',function(){
+            if(tile.classList.contains('addon-selected')){tile.classList.remove('addon-selected');widgetAddons=widgetAddons.filter(function(id){return id!==addon.id;});}
+            else{tile.classList.add('addon-selected');widgetAddons.push(addon.id);}
+          });
+          addonGridEl.appendChild(tile);
+        });
+      }
+      setTimeout(function(){ var rs=document.getElementById('quote-reveal-section'); if(rs) rs.scrollIntoView({behavior:'smooth',block:'nearest'}); },150);
+    }
+    var freqBtn = e.target.closest('.quote-freq-btn');
+    if(freqBtn){
+      document.querySelectorAll('.quote-freq-btn').forEach(function(b){ b.classList.remove('selected'); });
+      freqBtn.classList.add('selected');
+      var freqInput = document.getElementById('quote-frequency');
+      if(freqInput) freqInput.value = freqBtn.getAttribute('data-value');
+    }
+    var backBtn = e.target.closest('#quote-back-2');
+    if(backBtn){
+      document.body.classList.remove('modal-active');
+      var card = document.querySelector('.quote-modal-card');
+      if(card) card.style.display='none';
+      var overlay = document.getElementById('quote-modal-overlay');
+      if(overlay) overlay.style.display='none';
+      var step2 = document.getElementById('quote-step-2');
+      var step1 = document.getElementById('quote-step-1');
+      if(step2){ step2.classList.add('step-hidden'); }
+      if(step1){ step1.classList.remove('step-hidden'); }
+    }
+  });
 })();
-
-
-// ── NEW MODAL HANDLERS ──
-
-
-// Frequency buttons
-var freqBtns = document.querySelectorAll('.quote-freq-btn');
-freqBtns.forEach(function(btn){
-  btn.addEventListener('click', function(){
-    freqBtns.forEach(function(b){ b.classList.remove('selected'); });
-    btn.classList.add('selected');
-    var freqInput = document.getElementById('quote-frequency');
-    if(freqInput) freqInput.value = btn.getAttribute('data-value');
-  });
-});
-
-// Back button on modal
-var modalBack = document.getElementById('quote-back-2');
-if(modalBack){
-  modalBack.addEventListener('click', function(){
-    var step2 = document.getElementById('quote-step-2');
-    var step1 = document.getElementById('quote-step-1');
-  // Use event delegation for type buttons
-document.body.addEventListener('click', function(e){
-  var btn = e.target.closest('.quote-type-btn');
-  if(!btn) return;
-  document.querySelectorAll('.quote-type-btn').forEach(function(b){ b.classList.remove('selected'); });
-  btn.classList.add('selected');
-  var typeInput = document.getElementById('quote-type');
-  if(typeInput) typeInput.value = btn.getAttribute('data-value');
-  widgetCleaningType = btn.getAttribute('data-value');
-  var revealSection = document.getElementById('quote-reveal-section');
-  if(revealSection){
-    revealSection.style.display = 'block';
-    revealSection.style.visibility = 'visible';
-    revealSection.style.opacity = '1';
-  }
-  var cleanType = widgetCleaningType;
-  var grid = document.getElementById('quote-addon-grid');
-  console.log('RENDER ADDONS - type:', cleanType, 'grid:', grid, 'allAddons:', allAddons.length);
-  if(grid && allAddons.length > 0){
-    var excluded = exclusions[cleanType] || [];
-    var filtered = (window._allAddons || allAddons || []).filter(function(a){ return excluded.indexOf(a.id) === -1; });
-    grid.innerHTML = '';
-    widgetAddons = [];
-    filtered.forEach(function(addon){
-      var tile = document.createElement('div');
-      tile.className = 'addon-tile';
-      tile.setAttribute('data-id', addon.id);
-      tile.innerHTML = '<span class="addon-icon">' + addon.svg + '</span><span class="addon-label">' + addon.label + '</span>';
-      tile.addEventListener('click', function(){
-        if(tile.classList.contains('addon-selected')){
-          tile.classList.remove('addon-selected');
-          widgetAddons = widgetAddons.filter(function(id){ return id !== addon.id; });
-        } else {
-          tile.classList.add('addon-selected');
-          widgetAddons.push(addon.id);
-        }
-      });
-      grid.appendChild(tile);
-    });
-    console.log('RENDERED', filtered.length, 'tiles');
-  } else {
-    console.log('FAILED - grid null or allAddons empty');
-  }
-  setTimeout(function(){
-    var rs = document.getElementById('quote-reveal-section');
-    if(rs) rs.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }, 150);
-});
-    if(step2){ step2.classList.add('step-hidden'); step2.style.display=''; }
-    if(step1){ step1.classList.remove('step-hidden'); }
-  });
-}
