@@ -188,7 +188,10 @@
           }
           document.body.classList.add("modal-active");
           // Re-query addon grid after card is in DOM
-          addonGridEl = document.getElementById('quote-addon-grid');
+          setTimeout(function(){
+            addonGridEl = document.getElementById('quote-addon-grid');
+            console.log('addonGridEl after move:', addonGridEl);
+          }, 400);
         }
       }
     }, 350);
