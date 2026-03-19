@@ -2458,3 +2458,30 @@ img { content-visibility: auto; }
 .quote-modal-body .quote-input:focus{border-color:var(--lavender)!important;outline:none!important}
 .quote-reveal-section{animation:revealDown 0.35s ease}
 @keyframes revealDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+/* MODAL OVERLAY FIX */
+body.modal-active { overflow: hidden; }
+body.modal-active .quote-modal-overlay { display: block !important; }
+body.modal-active .quote-modal-card { display: block !important; }
+.quote-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 998 !important;
+}
+.quote-modal-card {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 999 !important;
+  width: min(700px, 92vw) !important;
+  max-height: 88vh !important;
+  overflow-y: auto !important;
+  background: var(--bg-base) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 32px 100px rgba(0,0,0,0.8) !important;
+}

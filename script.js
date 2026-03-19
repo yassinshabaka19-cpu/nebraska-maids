@@ -161,6 +161,8 @@
       quoteSuccessEl.classList.add("step-hidden");
       quoteSuccessEl.style.display = "";
     }
+    // Remove modal-active when going back to step 1
+    if (n === 1) { document.body.classList.remove("modal-active"); }
     setTimeout(function () {
       var step = quoteSteps[n - 1];
       if (step) {
@@ -168,7 +170,9 @@
         step.style.display = "block";
         step.offsetHeight;
         step.style.opacity = "1";
-        step.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        if (n === 1) { step.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+        // Activate modal overlay for step 2
+        if (n === 2) { document.body.classList.add("modal-active"); }
       }
     }, 350);
   }
