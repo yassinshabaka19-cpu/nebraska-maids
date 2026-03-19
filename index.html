@@ -134,7 +134,7 @@
         <div class="hero-quote-wrap" id="hero-quote">
           <div class="quote-widget">
             <div class="widget-step quote-step quote-step-1" id="quote-step-1" data-step="1">
-              <p class="widget-step-label quote-label">STEP 1 OF 4</p>
+              <p class="widget-step-label quote-label">STEP 1 OF 2</p>
               <h3 class="quote-title">Get an Instant Quote Now!</h3>
               <p class="quote-subtext">We'll prepare your estimate in 60 seconds</p>
               <label for="quote-phone" class="visually-hidden">Phone number</label>
@@ -143,44 +143,62 @@
               <p class="quote-privacy">🔒 No spam. We only contact you about your quote.</p>
             </div>
             <div class="widget-step quote-step quote-step-2 step-hidden" id="quote-step-2" data-step="2">
-              <p class="widget-step-label quote-label">STEP 2 OF 4</p>
-              <h3 class="quote-title">Tell us about your home</h3>
-              <button type="button" class="widget-back" id="quote-back-2" aria-label="Back to step 1">← Back</button>
-              <div class="quote-grid">
-                <div><label for="quote-bedrooms">Bedrooms</label><select id="quote-bedrooms" class="quote-select"><option value="">Select</option><option value="Studio">Studio</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div>
-                <div><label for="quote-bathrooms">Bathrooms</label><select id="quote-bathrooms" class="quote-select"><option value="">Select</option><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4+">4+</option></select></div>
-                <div><label for="quote-size">Home Size</label><select id="quote-size" class="quote-select"><option value="">Select</option><option value="0–1,000 sqft">0–1,000 sqft</option><option value="1,000–2,000 sqft">1,000–2,000 sqft</option><option value="2,000–3,000 sqft">2,000–3,000 sqft</option><option value="3,000+ sqft">3,000+ sqft</option></select></div>
-                <div><label for="quote-type">Cleaning Type</label><select id="quote-type" class="quote-select"><option value="">Select</option><option value="Standard Clean">Standard Clean</option><option value="Deep Clean">Deep Clean</option><option value="Move Out Clean">Move Out Clean</option></select></div>
+              <div class="quote-modal-overlay" id="quote-modal-overlay"></div>
+              <div class="quote-modal-card">
+                <div class="quote-modal-header">
+                  <button type="button" class="quote-modal-back" id="quote-back-2">← Back</button>
+                  <div class="quote-progress-wrap">
+                    <div class="quote-progress-bar"><div class="quote-progress-fill" style="width:100%"></div></div>
+                    <p class="widget-step-label quote-label">STEP 2 OF 2</p>
+                  </div>
+                </div>
+                <div class="quote-modal-body">
+                  <h3 class="quote-title">Tell us about your home</h3>
+                  <p class="quote-subtext">We'll prepare your personalized estimate</p>
+                  <div class="quote-grid-2">
+                    <div class="quote-field"><label for="quote-bedrooms">Bedrooms*</label><select id="quote-bedrooms" class="quote-select"><option value="">Select</option><option value="Studio">Studio</option><option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option><option value="3">3 Bedrooms</option><option value="4">4 Bedrooms</option><option value="5+">5+ Bedrooms</option></select></div>
+                    <div class="quote-field"><label for="quote-bathrooms">Bathrooms*</label><select id="quote-bathrooms" class="quote-select"><option value="">Select</option><option value="1">1 Bathroom</option><option value="1.5">1.5 Bathrooms</option><option value="2">2 Bathrooms</option><option value="2.5">2.5 Bathrooms</option><option value="3">3 Bathrooms</option><option value="4+">4+ Bathrooms</option></select></div>
+                    <div class="quote-field"><label for="quote-size">Square Footage*</label><select id="quote-size" class="quote-select"><option value="">Select</option><option value="Under 1,000 sqft">Under 1,000 sqft</option><option value="1,000-2,000 sqft">1,000-2,000 sqft</option><option value="2,000-3,000 sqft">2,000-3,000 sqft</option><option value="3,000+ sqft">3,000+ sqft</option></select></div>
+                    <div class="quote-field"><label for="quote-zip">Zip Code*</label><input type="text" id="quote-zip" class="quote-input" placeholder="78701" maxlength="5"></div>
+                  </div>
+                  <div class="quote-field-full">
+                    <label>Cleaning Type* <span class="quote-choose-hint">(Choose one to continue)</span></label>
+                    <div class="quote-type-btns" id="quote-type-btns">
+                      <button type="button" class="quote-type-btn" data-value="Standard Clean"><strong>Standard Clean</strong><span>Regular maintenance</span></button>
+                      <button type="button" class="quote-type-btn" data-value="Deep Clean"><strong>Deep Clean</strong><span>Thorough cleaning</span></button>
+                      <button type="button" class="quote-type-btn" data-value="Move Out Clean"><strong>Move Out Clean</strong><span>Complete move-out</span></button>
+                    </div>
+                    <input type="hidden" id="quote-type" value="">
+                  </div>
+                  <div class="quote-field-full">
+                    <label>How often do you need cleaning?*</label>
+                    <div class="quote-freq-btns">
+                      <button type="button" class="quote-freq-btn" data-value="One Time">One Time</button>
+                      <button type="button" class="quote-freq-btn" data-value="Weekly">Weekly</button>
+                      <button type="button" class="quote-freq-btn quote-freq-popular" data-value="Monthly"><span class="freq-popular-badge">MOST POPULAR</span>Monthly</button>
+                      <button type="button" class="quote-freq-btn" data-value="Quarterly">Quarterly</button>
+                    </div>
+                    <input type="hidden" id="quote-frequency" value="">
+                  </div>
+                  <div class="quote-field-full">
+                    <label>Add Extra Services <span class="quote-optional-hint">(Optional)</span></label>
+                    <div class="addon-grid" id="quote-addon-grid" role="group" aria-label="Select add-on services"></div>
+                  </div>
+                  <div class="quote-field-full quote-contact-section">
+                    <p class="quote-contact-label">Your Contact Information</p>
+                    <div class="quote-contact-grid">
+                      <div class="quote-field"><label for="quote-first-name">First Name*</label><input type="text" id="quote-first-name" class="quote-input" placeholder="ex. Jane" autocomplete="given-name"></div>
+                      <div class="quote-field"><label for="quote-last-name">Last Name*</label><input type="text" id="quote-last-name" class="quote-input" placeholder="ex. Smith" autocomplete="family-name"></div>
+                      <div class="quote-field quote-field-full-row"><label for="quote-email">Email*</label><input type="email" id="quote-email" class="quote-input" placeholder="email@example.com" autocomplete="email"></div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Get My Free Quote →</button>
+                  <p class="quote-privacy" style="text-align:center;margin-top:12px;">Need help? <a href="tel:+17373775656" style="color:var(--gold)">Text (737) 377-5656</a></p>
+                </div>
               </div>
-              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-next-2">Continue →</button>
             </div>
-            <div class="widget-step quote-step quote-step-3 step-hidden" id="quote-step-3" data-step="3">
-              <p class="widget-step-label quote-label">STEP 3 OF 4</p>
-              <h3 class="quote-title">Customize your clean</h3>
-              <p class="quote-subtext">Select any optional add-ons (additional fee applies)</p>
-              <button type="button" class="widget-back" id="quote-back-3" aria-label="Back to step 2">← Back</button>
-              <div class="addon-grid" id="quote-addon-grid" role="group" aria-label="Select add-on services"></div>
-              <p class="addon-included-note">Items already included in your selected service are automatically removed from this list.</p>
-              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-next-3">Next: Your Details →</button>
-            </div>
-            <div class="widget-step quote-step quote-step-4 step-hidden" id="quote-step-4" data-step="4">
-              <p class="widget-step-label quote-label">STEP 4 OF 4</p>
-              <h3 class="quote-title">Almost done!</h3>
-              <p class="quote-subtext">We'll send your personalized quote to your email</p>
-              <button type="button" class="widget-back" id="quote-back-4" aria-label="Back to step 3">← Back</button>
-              <div class="quote-summary">
-                <span class="quote-summary-label">📋 Your Quote Summary</span>
-                <div class="quote-summary-text" id="quote-summary-text"></div>
-              </div>
-              <label for="quote-first-name" class="visually-hidden">First name</label>
-              <input type="text" id="quote-first-name" class="quote-input" placeholder="First name" autocomplete="given-name">
-              <label for="quote-last-name" class="visually-hidden">Last name</label>
-              <input type="text" id="quote-last-name" class="quote-input" placeholder="Last name" autocomplete="family-name">
-              <label for="quote-email" class="visually-hidden">Email address</label>
-              <input type="email" id="quote-email" class="quote-input" placeholder="your@email.com" autocomplete="email">
-              <button type="button" class="btn btn-primary btn-block quote-btn" id="quote-submit">Send My Free Quote →</button>
-              <p class="quote-privacy" style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px;">We'll review your details and send your personalized quote shortly.</p>
-            </div>
+            <div class="widget-step quote-step quote-step-3 step-hidden" id="quote-step-3" data-step="3" style="display:none"></div>
+            <div class="widget-step quote-step quote-step-4 step-hidden" id="quote-step-4" data-step="4" style="display:none"></div>
             <div class="widget-success quote-success step-hidden" id="quote-success">
               <span class="success-icon" aria-hidden="true">✅</span>
               <h3>Your quote is on its way!</h3>

@@ -326,7 +326,9 @@
         hasError = true;
       }
       if (hasError) return;
-      var fd = new FormData(); fd.append("name", firstVal+" "+lastVal); fd.append("email", emailVal); fd.append("phone", document.getElementById("quote-phone") ? document.getElementById("quote-phone").value.trim() : ""); fd.append("bedrooms", widgetBedrooms || ""); fd.append("bathrooms", widgetBathrooms || ""); fd.append("home_size", document.getElementById("quote-size") ? document.getElementById("quote-size").value : ""); fd.append("cleaning_type", document.getElementById("quote-type") ? document.getElementById("quote-type").value : ""); fd.append("addons", widgetAddons && widgetAddons.length > 0 ? widgetAddons.join(", ") : "None"); var confNum = "AHC-" + Math.random().toString(36).substring(2,6).toUpperCase() + "-" + Date.now().toString().slice(-4); fd.append("confirmation_number", confNum); fd.append("_subject", "New Quote #"+confNum+": "+firstVal+" "+lastVal); fetch("https://formspree.io/f/meerrabr",{method:"POST",body:fd,headers:{"Accept":"application/json"}}).catch(function(){});
+      var fd = new FormData(); fd.append("name", firstVal+" "+lastVal); fd.append("email", emailVal); fd.append("phone", document.getElementById("quote-phone") ? document.getElementById("quote-phone").value.trim() : ""); fd.append("bedrooms", widgetBedrooms || ""); fd.append("bathrooms", widgetBathrooms || ""); fd.append("home_size", document.getElementById("quote-size") ? document.getElementById("quote-size").value : ""); fd.append("cleaning_type", document.getElementById("quote-type") ? document.getElementById("quote-type").value : "");
+      fd.append("frequency", document.getElementById("quote-frequency") ? document.getElementById("quote-frequency").value : "");
+      fd.append("zip_code", document.getElementById("quote-zip") ? document.getElementById("quote-zip").value : ""); fd.append("addons", widgetAddons && widgetAddons.length > 0 ? widgetAddons.join(", ") : "None"); var confNum = "AHC-" + Math.random().toString(36).substring(2,6).toUpperCase() + "-" + Date.now().toString().slice(-4); fd.append("confirmation_number", confNum); fd.append("_subject", "New Quote #"+confNum+": "+firstVal+" "+lastVal); fetch("https://formspree.io/f/meerrabr",{method:"POST",body:fd,headers:{"Accept":"application/json"}}).catch(function(){});
       widgetFirstName = firstVal;
       widgetLastName = lastVal;
       widgetEmail = emailVal;
@@ -482,3 +484,39 @@
   }
 })();
 
+
+// ── NEW MODAL HANDLERS ──
+// Cleaning type buttons
+var typeBtns = document.querySelectorAll('.quote-type-btn');
+typeBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    typeBtns.forEach(function(b){ b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    var typeInput = document.getElementById('quote-type');
+    if(typeInput) typeInput.value = btn.getAttribute('data-value');
+    // re-render addons based on type
+    if(typeof renderAddons === 'function') renderAddons();
+  });
+});
+
+// Frequency buttons
+var freqBtns = document.querySelectorAll('.quote-freq-btn');
+freqBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    freqBtns.forEach(function(b){ b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    var freqInput = document.getElementById('quote-frequency');
+    if(freqInput) freqInput.value = btn.getAttribute('data-value');
+  });
+});
+
+// Back button on modal
+var modalBack = document.getElementById('quote-back-2');
+if(modalBack){
+  modalBack.addEventListener('click', function(){
+    var step2 = document.getElementById('quote-step-2');
+    var step1 = document.getElementById('quote-step-1');
+    if(step2){ step2.classList.add('step-hidden'); step2.style.display=''; }
+    if(step1){ step1.classList.remove('step-hidden'); }
+  });
+}
