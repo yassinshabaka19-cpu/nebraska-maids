@@ -189,23 +189,14 @@
           document.body.classList.add("modal-active");
           // Re-query addon grid after card is moved to body, then pre-populate
           setTimeout(function(){
-            addonGridEl = document.getElementById('quote-addon-grid');
-            // Pre-select Standard Clean if nothing is selected yet
+            // Reset — no cleaning type pre-selected, addons hidden until user picks
+            document.querySelectorAll('.quote-type-btn').forEach(function(b){ b.classList.remove('selected'); });
             var typeInput = document.getElementById('quote-type');
-            var alreadySelected = document.querySelector('.quote-type-btn.selected');
-            if (!alreadySelected) {
-              var defaultBtn = document.querySelector('.quote-type-btn[data-value="Standard Clean"]');
-              if (defaultBtn) {
-                document.querySelectorAll('.quote-type-btn').forEach(function(b){ b.classList.remove('selected'); });
-                defaultBtn.classList.add('selected');
-                if (typeInput) typeInput.value = 'Standard Clean';
-                widgetCleaningType = 'Standard Clean';
-              }
-            }
-            // Always build the addon grid on open
+            if (typeInput) typeInput.value = '';
+            widgetCleaningType = '';
+            widgetAddons = [];
             var revealSection = document.getElementById('quote-reveal-section');
-            if (revealSection) revealSection.style.display = 'block';
-            buildAddonGrid();
+            if (revealSection) revealSection.style.display = 'none';
           }, 420);
         }
       }
