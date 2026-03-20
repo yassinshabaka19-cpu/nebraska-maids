@@ -2433,7 +2433,11 @@ img { content-visibility: auto; }
 .quote-type-btn:hover{border-color:var(--lavender);background:var(--lavender-subtle)}
 .quote-type-btn.selected{border-color:var(--lavender);background:var(--lavender-subtle)}
 .quote-type-btn.selected strong{color:var(--lavender)}
-.quote-freq-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.quote-freq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
 .quote-freq-btn{background:var(--bg-elevated);border:1.5px solid var(--moss-border);border-radius:var(--radius-md);padding:12px 8px;cursor:pointer;font-size:13px;font-weight:600;color:var(--white);display:flex;flex-direction:column;align-items:center;gap:4px;transition:all 0.2s}
 .quote-freq-btn:hover{border-color:var(--lavender);background:var(--lavender-subtle)}
 .quote-freq-btn.selected{border-color:var(--lavender);background:var(--lavender-subtle);color:var(--lavender)}
@@ -2448,7 +2452,7 @@ img { content-visibility: auto; }
   .quote-type-btns{grid-template-columns:repeat(3,1fr);gap:6px}
   .quote-type-btn{padding:10px 4px}
   .quote-type-btn strong{font-size:11px}
-  .quote-freq-btns{grid-template-columns:repeat(2,1fr)}
+  .quote-freq-grid{grid-template-columns:repeat(2,1fr)}
   .quote-contact-grid{grid-template-columns:1fr}
   .quote-field-full-row{grid-column:1}
   .quote-modal-card{width:96vw;max-height:95vh;border-radius:var(--radius-md)}
