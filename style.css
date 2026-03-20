@@ -2409,7 +2409,7 @@ img { content-visibility: auto; }
 /* NEW 2-STEP MODAL */
 .quote-progress-wrap{text-align:center;margin-bottom:4px}
 .quote-progress-bar{width:120px;height:4px;background:rgba(255,255,255,0.12);border-radius:99px;margin:0 auto 6px}
-.quote-progress-fill{height:100%;background:var(--gold);border-radius:99px;transition:width 0.4s}
+.quote-progress-fill{height:100%;background:#C4B5FD;border-radius:99px;transition:width 0.4s}
 .quote-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:998}
 
 .quote-modal-card{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999;width:min(700px,92vw);max-height:88vh;overflow-y:auto;background:var(--bg-base);border:1px solid rgba(255,255,255,0.1);border-radius:20px;box-shadow:0 32px 100px rgba(0,0,0,0.8);display:none}
@@ -2425,7 +2425,7 @@ img { content-visibility: auto; }
 .quote-field label{display:block;font-size:13px;font-weight:600;color:var(--white);margin-bottom:6px}
 .quote-field-full{margin-bottom:20px}
 .quote-field-full>label{display:block;font-size:13px;font-weight:600;color:var(--white);margin-bottom:10px}
-.quote-choose-hint,.quote-optional-hint{font-weight:400;color:var(--gold);font-size:12px;margin-left:6px}
+.quote-choose-hint,.quote-optional-hint{font-weight:400;color:#C4B5FD;font-size:12px;margin-left:6px}
 .quote-type-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .quote-type-btn{background:var(--bg-elevated);border:1.5px solid var(--moss-border);border-radius:var(--radius-md);padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all 0.2s;color:var(--white)}
 .quote-type-btn strong{font-size:13px;font-weight:700}
@@ -2452,6 +2452,10 @@ img { content-visibility: auto; }
   font-weight: 600;
   color: var(--white);
   transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .quote-freq-btn:hover {
@@ -2465,16 +2469,8 @@ img { content-visibility: auto; }
   color: var(--lavender);
 }
 
-.quote-freq-btn.most-popular {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  border-color: #C4B5FD;
-  color: #C4B5FD;
-}
-
 .most-popular-badge {
+  display: block;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2482,8 +2478,11 @@ img { content-visibility: auto; }
   border: 1px solid #C4B5FD;
   border-radius: 20px;
   padding: 2px 8px;
-  line-height: 1.4;
+  margin-bottom: 4px;
 }
+.quote-modal-help{text-align:center;margin-top:12px;color:#C4B5FD}
+.quote-modal-help a{color:#C4B5FD}
+.quote-modal-help a:hover{text-decoration:underline}
 .quote-contact-section{border-top:1px solid var(--moss-border);padding-top:20px;margin-top:8px}
 .quote-contact-label{font-size:15px!important;font-weight:700!important;color:var(--white)!important;margin-bottom:14px!important;display:block}
 .quote-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
