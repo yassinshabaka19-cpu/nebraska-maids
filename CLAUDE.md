@@ -1,6 +1,6 @@
 # Nebraska Maids — website
 
-Live site: https://www.nebraskamaids.com (Vercel project `nebraska-maids`; a second Vercel project `nebraska-maids-app` also exists).
+Not launched yet. The Vercel project `nebraska-maids` serves it at https://nebraska-maids.vercel.app. The domain nebraskamaids.com is owned but still points to a GoDaddy placeholder page, not to Vercel. A duplicate Vercel project `nebraska-maids-app` also deploys this repo.
 This site was created by copying the Austin House Cleaners site and rebranding it (March 2026: charcoal + sky-blue theme). **`README.md` still describes Austin House Cleaners and is out of date.**
 
 ## Stack
